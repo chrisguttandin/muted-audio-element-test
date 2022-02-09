@@ -15,6 +15,9 @@
         <h2>AudioElement</h2>
         <p>Clicking the following button will play an audio file by using an audio element.</p>
         <button id="toggle-audio-element-button">toggle sound by playing it through an audio element</button>
+        <pre><code>const $audio = document.getElementById('audio');
+
+$audio.play();</code></pre>
         <hr />
         <h2>AudioElement &amp; MediaStreamAudioSourceNode</h2>
         <p>
@@ -22,6 +25,17 @@
             AudioContext.
         </p>
         <button id="toggle-both-button">toggle sound by playing through an audio element and the Web Audio API</button>
+        <pre><code>const $audio = document.getElementById('audio');
+
+$audio.play();
+
+const audioContext = new AudioContext();
+const mediaStreamAudioSourceNode = new MediaStreamAudioSourceNode(
+    audioContext,
+    { mediaStream: $audio.captureStream() }
+);
+
+mediaStreamAudioSourceNode.connect(audioContext.destination);</code></pre>
         <hr />
         <h2>AudioElement (muted) &amp; MediaStreamAudioSourceNode</h2>
         <p>
@@ -29,6 +43,18 @@
             therefore the sound should only be audible through the AudioContext.
         </p>
         <button id="toggle-web-audio-button">toggle sound by playing through the Web Audio API</button>
+        <pre><code>const $audio = document.getElementById('audio');
+
+$audio.muted = true;
+$audio.play();
+
+const audioContext = new AudioContext();
+const mediaStreamAudioSourceNode = new MediaStreamAudioSourceNode(
+    audioContext,
+    { mediaStream: $audio.captureStream() }
+);
+
+mediaStreamAudioSourceNode.connect(audioContext.destination);</code></pre>
         <hr />
         <p>
             The audio file used on this page is part of
