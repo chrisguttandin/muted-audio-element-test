@@ -11,21 +11,25 @@
             <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1125304" target="_blank">bug in Chrome</a>.
         </p>
         <audio id="audio" src="assets/warm-up.mp3"></audio>
+        <hr />
+        <h2>AudioElement</h2>
         <p>Clicking the following button will play an audio file by using an audio element.</p>
         <button id="toggle-audio-element-button">toggle sound by playing it through an audio element</button>
-        <br />
+        <hr />
+        <h2>AudioElement &amp; MediaStreamAudioSourceNode</h2>
         <p>
             Clicking the following button will play an audio file by using an audio element as well. It will also pipe the audio through an
             AudioContext.
         </p>
         <button id="toggle-both-button">toggle sound by playing through an audio element and the Web Audio API</button>
-        <br />
+        <hr />
+        <h2>AudioElement (muted) &amp; MediaStreamAudioSourceNode</h2>
         <p>
             Clicking the following button will do the same as the button above. The only difference is that the audio element is muted and
             therefore the sound should only be audible through the AudioContext.
         </p>
         <button id="toggle-web-audio-button">toggle sound by playing through the Web Audio API</button>
-        <br />
+        <hr />
         <p>
             The audio file used on this page is part of
             <a href="https://monofonicos.net/mnf036-insanity-circle-itinerario-nocturno/" rel="noopener noreferrer" target="_blank"
