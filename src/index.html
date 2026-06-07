@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -14,7 +14,7 @@
         <hr />
         <h2>AudioElement</h2>
         <p>Clicking the following button will play an audio file by using an audio element.</p>
-        <button id="toggle-audio-element-button">toggle sound by playing it through an audio element</button>
+        <button id="toggle-audio-element-button" type="button">toggle sound by playing it through an audio element</button>
         <pre><code>const $audio = document.getElementById('audio');
 
 $audio.play();</code></pre>
@@ -24,7 +24,7 @@ $audio.play();</code></pre>
             Clicking the following button will play an audio file by using an audio element as well. It will also pipe the audio through an
             AudioContext.
         </p>
-        <button id="toggle-both-button">toggle sound by playing through an audio element and the Web Audio API</button>
+        <button id="toggle-both-button" type="button">toggle sound by playing through an audio element and the Web Audio API</button>
         <pre><code>const $audio = document.getElementById('audio');
 
 $audio.play();
@@ -32,7 +32,7 @@ $audio.play();
 const audioContext = new AudioContext();
 const mediaStreamAudioSourceNode = new MediaStreamAudioSourceNode(
     audioContext,
-    { mediaStream: $audio.captureStream() }
+    &lbrace; mediaStream: $audio.captureStream() &rbrace;
 );
 
 mediaStreamAudioSourceNode.connect(audioContext.destination);</code></pre>
@@ -42,7 +42,7 @@ mediaStreamAudioSourceNode.connect(audioContext.destination);</code></pre>
             Clicking the following button will do the same as the button above. The only difference is that the audio element is muted and
             therefore the sound should only be audible through the AudioContext.
         </p>
-        <button id="toggle-web-audio-button">toggle sound by playing through the Web Audio API</button>
+        <button id="toggle-web-audio-button" type="button">toggle sound by playing through the Web Audio API</button>
         <pre><code>const $audio = document.getElementById('audio');
 
 $audio.muted = true;
@@ -51,7 +51,7 @@ $audio.play();
 const audioContext = new AudioContext();
 const mediaStreamAudioSourceNode = new MediaStreamAudioSourceNode(
     audioContext,
-    { mediaStream: $audio.captureStream() }
+    &lbrace; mediaStream: $audio.captureStream() &rbrace;
 );
 
 mediaStreamAudioSourceNode.connect(audioContext.destination);</code></pre>
